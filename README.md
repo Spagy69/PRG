@@ -1,1 +1,1 @@
-nice
+Some basic scripts idk
