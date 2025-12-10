@@ -39,7 +39,7 @@ del user1
 
 print(100 * "-")
 
-star = VerifiedAccount("skibidi.toilet", 6900, "fialová")
+star = VerifiedAccount("opikula28", 6800, "fialová")
 star.promote(670)
 print(star.__str__())
 del star
