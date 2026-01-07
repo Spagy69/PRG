@@ -35,7 +35,7 @@ mail.send(
     text="Váš klient nepodporuje HTML.", # plain text
     html=""" 
     <html>
-      <body>s
+      <body>
         <h1>Ahoj</h1>
         <p>Toto je <strong>HTML</strong> e-mail.</p>
       </body>
