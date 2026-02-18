@@ -1,14 +1,17 @@
 class Facade:
     def __init__(self, input):
         self.input = input
+        self.validate = Validate()
+        self.processor = Processor()
+        self.outputSystem = OutputSystem()
         self.run()
     
     def run(self):
-        result = self.validate(self.input)
-        output = self.processor(result)
-        self.outputSystem(output)
+        result = self.validate.validate(self.input)
+        output = self.processor.processor(result)
+        self.outputSystem.outputSystem(output)
 
-    # validuje jestli user zadal správný command
+class Validate:
     def validate(self, input):
         if input == "start":
             return 1
@@ -19,7 +22,7 @@ class Facade:
         else:
             return "Invalid input"
 
-    # zpracuje command a vrátí hodnotu
+class Processor:
     def processor(self, result):
         if result == 1:
             return "System starting..."
@@ -30,7 +33,7 @@ class Facade:
         else:
             return "Invalid input"
 
-    # vypíše hodnotu z processor classy
+class OutputSystem:
     def outputSystem(self, output):
         print(output)
 
