@@ -3,13 +3,13 @@ class Facade:
         self.input = input
         self.validate = Validate()
         self.processor = Processor()
-        self.outputSystem = OutputSystem()
+        self.display = OutputSystem()
         self.run()
     
     def run(self):
         result = self.validate.validate(self.input)
-        output = self.processor.processor(result)
-        self.outputSystem.outputSystem(output)
+        output = self.processor.process(result)
+        self.display.output(output)
 
 class Validate:
     def validate(self, input):
@@ -23,7 +23,7 @@ class Validate:
             return "Invalid input"
 
 class Processor:
-    def processor(self, result):
+    def process(self, result):
         if result == 1:
             return "System starting..."
         elif result == 2:
@@ -34,7 +34,7 @@ class Processor:
             return "Invalid input"
 
 class OutputSystem:
-    def outputSystem(self, output):
+    def output(self, output):
         print(output)
 
 print(50*"-")
